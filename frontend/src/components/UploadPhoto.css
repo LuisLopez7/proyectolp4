@@ -1,0 +1,137 @@
+.upload-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .upload-photo-card {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Reducir el ancho de la tarjeta */
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todos los elementos dentro de la tarjeta */
+  }
+  
+  .upload-photo-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .upload-section {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .upload-input,
+  .upload-textarea,
+  .upload-file-input {
+    width: calc(100% - 20px); /* Ajuste para el borde */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .upload-textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .upload-button,
+  .tags-toggle-button {
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    text-align: center; /* Alineación centrada del texto */
+  }
+  
+  .upload-button:hover,
+  .tags-toggle-button:hover {
+    background-color: #2a85d3;
+  }
+  
+  .tags-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    position: absolute;
+    width: 100%;
+    max-height: 150px; /* Altura máxima para el contenedor */
+    overflow-y: auto;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .tag-button {
+    background-color: #e0e0e0;
+    color: #555;
+    border: none;
+    padding: 5px 10px; /* Reducir el tamaño de los botones */
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+    transition: background-color 0.3s;
+  }
+  
+  .tag-button.selected {
+    background-color: #3897f0;
+    color: white;
+  }
+  
+  .tag-button:hover {
+    background-color: #c7c7c7;
+  }
+  
+  .upload-success {
+    color: #4caf50;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .create-album-link {
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #3897f0;
+    font-size: 0.9rem;
+  }
+  
+  .create-album-link p {
+    margin-bottom: 0;
+  }
+  
+  .create-album-button {
+    color: #3897f0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline; /* Subrayado para indicar que es un enlace */
+    transition: color 0.3s;
+  }
+  
+  .create-album-button:hover {
+    color: #2a85d3;
+  }
