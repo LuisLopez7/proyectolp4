@@ -1,0 +1,106 @@
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../assets/gifs/foto1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: left;
+    background-color: #f0f0f000;
+    position: relative;
+}
+
+.connect-us-logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #19ec6a;
+}
+
+.loading-images {
+    width: 100%;   /*ancho*/
+    height: 600px;  /*altura*/
+    display: flex;
+    justify-content:left;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-images img {
+    width: 800px;   /*ancho*/
+    height: 500px;  /*altura*/
+    padding: 60px;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    margin: -10px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0px;
+}
+
+.navigation-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+  
+}
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.button-container.right {
+    right: 20px;
+}
+
+.button-container.left {
+    left: 20px;
+}
+
+.login-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+}
+
+.Privacy-button {
+    padding: 10px 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+    
+}
+
+.login-button:hover, .privacy-button:hover {
+    background-color: #0056b3;
+}
+
