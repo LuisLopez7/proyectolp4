@@ -19,7 +19,7 @@ const MiPerfil = () => {
             const token = localStorage.getItem('token');
             if (token) {
                 try {
-                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/profile`, {
+                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/profile`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     console.log('User data:', response.data); 
