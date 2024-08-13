@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -22,15 +23,13 @@ function Login({ setIsAuthenticated }) {  // Agrega el prop aquí
 
             if (response.data.success) {
                 const { token, username, firstName, lastName } = response.data;
-                // Guardar la información del usuario y el token en el localStorage
                 localStorage.setItem('token', token);
-                localStorage.setItem('username', username || '');  // Maneja el caso en que estos datos no existan
+                localStorage.setItem('username', username || '');  
                 localStorage.setItem('firstName', firstName || '');
                 localStorage.setItem('lastName', lastName || '');
 
-                setIsAuthenticated(true);  // Establece la autenticación aquí
+                setIsAuthenticated(true);  
                 
-                // Redirigir a Feed
                 navigate('/Feed');
             } else {
                 setMessage(response.data.message || 'Error desconocido');
@@ -66,6 +65,7 @@ function Login({ setIsAuthenticated }) {  // Agrega el prop aquí
                 </label>
                 <button type="submit" className="btn-login">Iniciar Sesión</button>
                 <Link to="/register" className="register-link">¿No tienes una cuenta? Regístrate aquí</Link>
+                <Link to="/forgot-password" className="forgot-password-link">¿Olvidaste tu contraseña?</Link>
             </form>
         </div>
     );
