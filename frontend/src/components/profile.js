@@ -22,7 +22,11 @@ const MiPerfil = () => {
                     setPosts(response.data.posts || []); // Actualizar el estado de posts
                 } catch (err) {
                     console.error('Error fetching user data:', err);
+                    // Considera mostrar un mensaje de error aquí
                 }
+            } else {
+                // Redirige o muestra un mensaje si el token no está presente
+                console.log('Token no encontrado');
             }
         };
 
@@ -41,8 +45,9 @@ const MiPerfil = () => {
         setShowOptions(!showOptions);
     };
 
-    // Filtrar posts según la configuración de privacidad
+    // Filtrar posts según la configuración de privacidad (ajusta esto según tu lógica)
     const filteredPosts = posts.filter(post => {
+        // Implementa lógica de filtrado aquí si es necesario
         return true; 
     });
 
@@ -62,6 +67,7 @@ const MiPerfil = () => {
                             <Link to="/calendar" className="dropdown-item">Eventos</Link>
                             <Link to="/estadisticas" className="dropdown-item">Estadísticas</Link>
                             <Link to="/create-album" className="dropdown-item">Crear Álbum</Link>
+                            <Link to="/userprofile" className="dropdown-item">Perfil</Link>
                         </div>
                     </div>
                 </div>
@@ -135,4 +141,3 @@ const MiPerfil = () => {
 };
 
 export default MiPerfil;
-
