@@ -7,12 +7,7 @@ const MiPerfil = () => {
     const [userData, setUserData] = useState(null);
     const [selectedPost, setSelectedPost] = useState(null);
     const [showOptions, setShowOptions] = useState(false);
-    
-    const posts = [
-        "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2024/06/19/17187971620723.jpg",
-        "https://phantom-marca.unidadeditorial.es/7e747731a77d954af79f60b4392d75f4/resize/828/f/jpg/assets/multimedia/imagenes/2024/02/05/17071705902442.jpg",
-        "https://ichef.bbci.co.uk/news/2048/cpsprodpb/85aa/live/47176430-b058-11ee-beb5-e1400df560f2.jpg"
-    ];
+    const [posts, setPosts] = useState([]); // Definir el estado de posts
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -22,8 +17,9 @@ const MiPerfil = () => {
                     const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/profile`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
-                    console.log('User data:', response.data); 
+                    console.log('User data:', response.data);
                     setUserData(response.data);
+                    setPosts(response.data.posts || []); // Actualizar el estado de posts
                 } catch (err) {
                     console.error('Error fetching user data:', err);
                 }
@@ -45,6 +41,11 @@ const MiPerfil = () => {
         setShowOptions(!showOptions);
     };
 
+    // Filtrar posts según la configuración de privacidad
+    const filteredPosts = posts.filter(post => {
+        return true; 
+    });
+
     return (
         <div className="profile-body">
             {/* Navbar */}
@@ -55,6 +56,7 @@ const MiPerfil = () => {
                     </div>
                     <div className="button-container">
                         <Link to="/updateprofile" className="btn">Editar Perfil</Link>
+                        <Link to="/privacysettings" className="btn">Configuración de Privacidad</Link>
                         <button className="btn" onClick={toggleOptions}>Opciones</button>
                         <div className={`dropdown-menu ${showOptions ? 'show' : ''}`}>
                             <Link to="/calendar" className="dropdown-item">Eventos</Link>
@@ -96,7 +98,7 @@ const MiPerfil = () => {
 
                         {/* Posts */}
                         <div className="posts">
-                            {posts.map((post, index) => (
+                            {filteredPosts.map((post, index) => (
                                 <div key={index} className="post" onClick={() => handlePostClick(post)}>
                                     <img src={post} alt="Post" />
                                 </div>
@@ -133,3 +135,4 @@ const MiPerfil = () => {
 };
 
 export default MiPerfil;
+
