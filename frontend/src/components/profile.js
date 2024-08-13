@@ -125,8 +125,8 @@ const MiPerfil = () => {
                         <div className="modal-right">
                             <div className="comments-container">
                                 {/* Aquí puedes agregar tus comentarios */}
-                                <p>Comentario 1</p>
-                                <p>Comentario 2</p>
+                                <p>NO hay comentarios</p>
+                                <p></p>
                             </div>
                             <div className="interaction-buttons">
                                 <button className="btn">Me gusta</button>
